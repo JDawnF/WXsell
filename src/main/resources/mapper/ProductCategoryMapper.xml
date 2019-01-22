@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.immoc.dataobject.mapper.ProductCategoryMapper">
+    <!--type对应实体类，column对应数据库表字段，property对应实体类中的属性-->
+    <resultMap id="BaseResultMap" type="com.immoc.dataobject.ProductCategory">
+        <id column="category_id" property="categoryId" jdbcType="INTEGER"/>
+        <id column="category_name" property="categoryName" jdbcType="VARCHAR"/>
+        <id column="category_type" property="categoryType" jdbcType="INTEGER"/>
+    </resultMap>
+    <!--id为mapper中定义的方法，parameterType为返回的参数类型-->
+    <select id="selectByCategoryType" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select category_id,category_name,category_type
+        from product_category
+        where category_type=#{category_type,jdbcType=INTEGER}
+    </select>
+</mapper>
