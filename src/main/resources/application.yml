@@ -1,0 +1,46 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://192.168.43.158/sell?characterEncoding=utf-8&useSSL=false
+#  打印sql语句
+  jpa:
+    show-sql: true
+#  当api文档中，返回结果为null时，后端反映给前端的不会出现null字眼
+  jackson:
+    default-property-inclusion: non_null
+  redis:
+    host: 192.168.43.158
+    port: 6379
+server:
+  servlet:
+    context-path: /sell
+#logging:
+#  pattern:
+#    console: "%d - %msg%n"
+##  path: /var/log/tomcat/sell
+#  file: /var/log/tomcat/sell/sell.log
+##  指定到某个类
+#  level:
+#    com.imooc.LoggerTest:debug
+
+wechat:
+  mpAppId: wx637f88307f56efe7
+  mpAppSecret: 3a812e201fc4d65d3dfb41328bb8ab9a
+#  可以看到mybatis的sql语句,一般只在开发中使用，生产环境中不使用
+logging:
+  level:
+    com.immoc.dataobject.mapper: trace
+#    扫描mapper.xml
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+#  开放平台的id和密钥
+#  openAppId:
+#  openAppSecret:
+#  微信支付相关信息
+#  mchId: 1501693271
+#  mchKey: 06C56A89949D617xxxxxxxxxxx
+#  keyPath: /var/weixin_cert/h5.p12
+#  微信支付异步通知url
+#  notifyUrl: http://wcsell.nat100.top/sell/pay/notify
