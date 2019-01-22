@@ -1,8 +1,8 @@
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    username: root
-    password: 123456
+    username: xxx
+    password: xxx
     url: jdbc:mysql://192.168.43.158/sell?characterEncoding=utf-8&useSSL=false
 #  打印sql语句
   jpa:
@@ -25,9 +25,10 @@ server:
 #  level:
 #    com.imooc.LoggerTest:debug
 
+#微信开发相关配置
 wechat:
-  mpAppId: wx637f88307f56efe7
-  mpAppSecret: 3a812e201fc4d65d3dfb41328bb8ab9a
+  mpAppId:
+  mpAppSecret:
 #  可以看到mybatis的sql语句,一般只在开发中使用，生产环境中不使用
 logging:
   level:
@@ -43,4 +44,4 @@ mybatis:
 #  mchKey: 06C56A89949D617xxxxxxxxxxx
 #  keyPath: /var/weixin_cert/h5.p12
 #  微信支付异步通知url
-#  notifyUrl: http://wcsell.nat100.top/sell/pay/notify
+#  notifyUrl:
